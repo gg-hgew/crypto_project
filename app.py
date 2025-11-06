@@ -7,9 +7,16 @@ from Crypto.PublicKey import RSA
 from Crypto.Cipher import PKCS1_OAEP, AES
 from Crypto.Random import get_random_bytes
 import plotly.express as px
-import graphviz
 from streamlit_lottie import st_lottie
 import requests
+
+# use string source for graphviz_chart
+dot_source = """
+digraph {
+    S -> A -> B -> C -> N -> R -> D -> E
+}
+"""
+st.graphviz_chart(dot_source)
 
 # Page config
 st.set_page_config(page_title="Crypto Performance Lab", layout="wide", page_icon="🔐")
